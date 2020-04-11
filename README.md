@@ -1,3 +1,11 @@
+# Shell Scripts to Plot CSV Data
+
+This branch adds a new `plot.sh` script that will extract out the CSV data and then use Gnuplot to graph the results. The output graph uses the same week-averaged log-log "trajectory" format as https://aatishb.com/covidtrends/. You can specify specific states/counties to be plotted via regex (in low-contrast dashed grey for context), and a similar regex to highlight specific states/counties of interest. Run the script without arguments for usage instructions and examples.
+
+![Example plot from local-plot.sh for data through 2020-04-10](https://raw.githubusercontent.com/jigpu/covid-19-data/scripts/example.png)
+
+Two additional scripts are also included which I use to monitor my local situation. The scripts (`local-plot.sh` and `state-plot.sh`) can be run without arguments and produce plots like the one shown above for data through 2020-04-10.
+
 # Coronavirus (Covid-19) Data in the United States
 
 [ [U.S. State-Level Data](us-states.csv) ([Raw CSV](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv)) | [U.S. County-Level Data](us-counties.csv) ([Raw CSV](https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv)) ]
