@@ -6,4 +6,4 @@
 FILE=$(ls us-states*.csv | tail -n1)
 DATE=$(cut -d, -f1 "$FILE" | grep "^20" | sort | tail -n1)
 
-./plot.sh "$FILE" "" "Oregon|Washington" "COVID-19 Cases Through ${DATE}"
+./plot.sh "$FILE" "" "Oregon|Washington" "COVID-19 Cases Through ${DATE} (US States)"

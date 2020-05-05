@@ -93,8 +93,8 @@ done
 
 gnuplot -p \
   -e 'set title "'"${TITLE}"'"' \
-  -e 'set xlabel "Total COVID cases"' \
-  -e 'set ylabel "COVID cases in past 7 days"' \
+  -e 'set xlabel "Total cases reported"' \
+  -e 'set ylabel "7-Day average of cases reported"' \
   -e 'set logscale xy' \
   -e 'set xrange [1<*:]' \
   -e 'set yrange [1<*:]' \
