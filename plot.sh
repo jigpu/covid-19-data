@@ -77,6 +77,7 @@ head -n1 "$1" | grep -q "county" && DATA=$(awk -vFS=, -vOFS=',' '{print $1, $2 "
 CODES=$(echo "$DATA" | awk -vFS=, -vFILTER="${FILTER}" '{if ($2 ~ FILTER) { print $3 }}' | sort | uniq)
 echo "Processing FIPS codes " $CODES
 
+STYLE=2
 for FIPS in $CODES; do
   OUTFILE="${FIPS}.dat"
   awk -vFIPS="^${FIPS}\$" "$AWKPROG" <<< "$DATA" > "${OUTFILE}"
@@ -85,7 +86,8 @@ for FIPS in $CODES; do
   PROG="${PROG} \"${OUTFILE}\" every ::2 with lines"
 
   if grep -Eq "${HIGHLIGHT}" <<< ${STATE}; then
-    PROG="${PROG} title '${STATE}' linewidth 3,"
+    PROG="${PROG} title '${STATE}' linestyle ${STYLE} linewidth 3,"
+    STYLE=$((${STYLE} + 1))
   else
     PROG="${PROG} linestyle 1 notitle,"
   fi
@@ -98,5 +100,8 @@ gnuplot -p \
   -e 'set logscale xy' \
   -e 'set xrange [1<*:]' \
   -e 'set yrange [1<*:]' \
+  -e 'load "gnuplot-palettes/dark2.pal"' \
   -e 'set style line 1 linecolor rgb "#aaaaaaaa" linetype 1 linewidth 1 dashtype 2' \
   -e "plot ${PROG}"
+
+
