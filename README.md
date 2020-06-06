@@ -188,9 +188,27 @@ Counts for Guam include cases reported from the USS Theodore Roosevelt.
 
 * Puerto Rico
 
-On April 21st, the territory's health department revised their number of cases downward, saying they had been double counting some coronavirus patients in official reports, leading to a higher number of cases reported than actually confirmed. 
+On April 21, the territory's health department revised their number of cases downward, saying they had been double counting some coronavirus patients in official reports, leading to a higher number of cases reported than actually confirmed. 
 
 Additionally, from approximately April 12th through April 18th, the count of deaths for Puerto Rico include some probable Covid-19 related deaths that were not lab-confirmed. Starting April 19th these have been removed. We will revise the numbers for the 12th to 18th as possible.
+
+* North Dakota
+
+On May 25, North Dakota annoucned that due to a laboratory equipment malfunction they were removing 82 positive results from their total case count, pending a retest of the samples.
+
+* Connecticut
+
+On May 27, Connecticut [announced](https://portal.ct.gov/Office-of-the-Governor/News/Press-Releases/2020/05-2020/Governor-Lamont-Coronavirus-Update-May-27) announced that they were removing 356 positive cases, which were determined to be duplicates, from their total case count.
+
+The number of deaths reported by the state in four counties on June 1 was anomalously high and several deaths are removed in the data for June 2.
+
+* Louisiana
+
+On May 29, Louisiana announced that due to a technical error they would not have an update on the number of total cases that day.
+
+* Massachusetts
+
+On April 24, Massachusetts reported the results of a large number of backlogged tests performed by Quest Diagnostics dating back to April 13, leading to a large one day jump in the number of total cases.
 
 #### Probable Cases and Deaths
 
@@ -202,13 +220,17 @@ Numbers reflect the combined number of lab-confirmed and probable cases and deat
 
 Numbers reflect the combined number of lab-confirmed and probable cases and deaths as reported by the state.
 
-* Idaho
-
-The total cases number includes only lab-confirmed cases, but the deaths number does include the deaths of probable Covid-19 cases.
-
 * Louisiana
 
-The total cases number and total deaths number include only lab-confirmed cases and deaths. The state appears to be reporting the deaths of probable Covid-19 cases separately from the total number of deaths statewide and in each parish but we are not yet including those cases in our numbers.
+The total cases number and total deaths number include only lab-confirmed cases and deaths. The state is reporting the deaths of probable Covid-19 cases separately from their total number of deaths statewide and in each parish, and we are including those deaths in our total number of deaths for the state.
+
+* Massachusetts
+
+On June 1, Massachusetts started reporting probable cases and deaths in their data. The total number of cases and deaths on that day include probable cases and deaths going back to March 1, leading to a large one day jump in the totals.
+
+* Michigan
+
+On June 1, we began recording probable cases and deaths reported by Michigan's county and regional health districts and adding them to the individual county and statewide totals. On June 5, the state also started to report probable cases and deaths statewide, leading to a jump in total cases and deaths.
 
 * Ohio
 
