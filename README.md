@@ -28,7 +28,7 @@ We are providing two sets of data with cumulative counts of coronavirus cases an
 
 The historical data files are at the top level of the directory and contain data up to, but not including the current day. The live data files are in the [live/](live/) directory.
 
-A key difference between the historical and live files is that the numbers in the historical files are the final counts at the end of each day, while the live files have figures that may be a partial count released during the day but cannot necessarily be considered the final, end-of-day tally..
+A key difference between the historical and live files is that the numbers in the historical files are the final counts at the end of each day, while the live files have figures that may be a partial count released during the day but cannot necessarily be considered the final, end-of-day tally.
 
 The historical and live data are released in three files, one for each of these geographic levels: U.S., states and counties.
  
@@ -70,7 +70,7 @@ County-level data can be found in the [counties.csv](us-counties.csv) file. ([Ra
 
 ```
 date,county,state,fips,cases,deaths
-2020-01-21,Washington,Snohomish,53061,1,0
+2020-01-21,Snohomish,Washington,53061,1,0
 ...
 ```
 
@@ -112,21 +112,38 @@ In most instances, the process of recording cases has been straightforward. But 
 
 For those reasons, our data will in some cases not exactly match with the information reported by states and counties. Those differences include these cases: When the federal government arranged flights to the United States for Americans exposed to the coronavirus in China and Japan, our team recorded those cases in the states where the patients subsequently were treated, even though local health departments generally did not. When a resident of Florida died in Los Angeles, we recorded her death as having occurred in California rather than Florida, though officials in Florida counted her case in their own records. And when officials in some states reported new cases without immediately identifying where the patients were being treated, we attempted to add information about their locations later, once it became available.
 
+* "Probable" and “Confirmed Cases and Deaths
+
+Cases and deaths can be reported as either “confirmed” or “probable.” Our total cases and deaths include both. The number of cases includes all cases, including those who have since recovered or died.
+
+On April 5, the Council of State and Territorial Epidemiologists [advised states](https://int.nyt.com/data/documenthelper/6908-cste-interim-20-id-01-covid-19/85d47e89b637cd643d50/optimized/full.pdf) to include both confirmed cases, based on confirmatory laboratory testing, and probable cases, based on specific criteria for testing, symptoms and exposure. The Centers for Disease Control adopted these definitions and national CDC data began including confirmed and probable cases on April 14.
+
+Some governments continue to report only confirmed cases, while others are reporting both confirmed and probable numbers. And there is also another set of governments that is reporting the two types of numbers combined without providing a way to separate the confirmed from the probable.
+
+The Geographic Exceptions section below has more details on specific areas. The methodology of individual states changes frequently.
+
 * Confirmed Cases
 
-Confirmed cases and deaths are counts of individuals whose coronavirus infections were confirmed by a laboratory test and reported by a federal, state, territorial or local government agency.
+Confirmed cases are counts of individuals whose coronavirus infections were confirmed by a laboratory test and reported by a federal, state, territorial or local government agency. Only tests that detect viral RNA in a sample are considered confirmatory. These are often called molecular or RT-PCR tests.
 
-The number of cases includes all cases, including those who have since recovered or died.
+* Probable Cases
 
-* "Probable" Cases and Deaths
+Probable cases count individuals who did not have a confirmed test but were evaluated by public health officials using criteria developed by states and the federal government and reported by a health department.
 
-Probable cases and deaths count individuals who did not have a confirmed test but were evaluated using criteria developed by states and the federal government.
+Public health officials consider laboratory, epidemiological, clinical and vital records evidence.
+Tests that detect antigens or antibodies are considered evidence towards a “probable” case, but are not sufficient on their own, according to the Council of State and Territorial Epidemiologists.
 
-On April 5, the Council of State and Territorial Epidemiologists Centers [advised states](https://int.nyt.com/data/documenthelper/6908-cste-interim-20-id-01-covid-19/85d47e89b637cd643d50/optimized/full.pdf) to include both confirmed cases, based on laboratory testing, and probable cases, based on specific criteria for symptoms and exposure. The Centers for Disease Control adopted these definitions and national CDC data began including confirmed and probable cases on April 14.
+* Confirmed Deaths
 
-Some governments continue to report only confirmed cases, while others are reporting both confirmed and probable numbers. And there is also another set of governments that are reporting the two types of numbers combined without providing a way to separate the confirmed from the probable.
+Confirmed deaths are individuals who have died and meet the definition for a confirmed Covid-19 case. Some states reconcile these records with death certificates to remove deaths from their count where Covid-19 is not listed as the cause of death. We follow health departments in removing non-Covid-19 deaths among confirmed cases when we have information to unambiguously know the deaths were not due to Covid-19, i.e. in cases of homicide, suicide, car crash or drug overdose.
 
-Please see the Geographic Exceptions section below for more details on specific areas, with the understanding that this changes frequently.
+* “Probable” Deaths
+
+Probable deaths are deaths where Covid-19 is listed on the death certificate as the cause of death or a significant contributing condition, but where there has been no positive confirmatory laboratory test.
+
+Deaths among probable cases tracked by a state or local health department where a death certificate has not yet been filed may also be counted as a probable death.
+
+For more on how states count confirmed and probable deaths, see this [article](https://www.nytimes.com/interactive/2020/06/19/us/us-coronavirus-covid-death-toll.htmlhttps://www.nytimes.com/interactive/2020/06/19/us/us-coronavirus-covid-death-toll.html).
 
 * Dates
 
@@ -152,23 +169,33 @@ Sometimes, cases are first reported in one county and then moved to another coun
 
 ### Geographic Exceptions
 
-* New York
+* Alabama
 
-All cases for the five boroughs of New York City (New York, Kings, Queens, Bronx and Richmond counties) are assigned to a single area called New York City. There is a large jump in the number of deaths on April 6th due to switching from data from New York City to data from New York state for deaths. We are not currently including the probable deaths reported by New York City.
-
-For all New York state counties, starting on April 8th we are reporting deaths by place of fatality instead of residence of individual. There were no new deaths reported by the state on April 17th or April 18th.
+Alabama's numbers for April 17th contained an [error](https://twitter.com/ALPublicHealth/status/1251531524958289920) in reporting of lab test results that the state is working to correct. The number of deaths drops on April 23rd for an unknown reason.
 
 * Georgia
 
 Starting April 12th, our case count excludes cases labeled by the state as "Non-Georgia Resident" leading to a one day drop in cases. These cases were previously included as cases with "Unknown" county.
 
-* Alabama
+* Michigan
 
-Alabama's numbers for April 17th contained an [error](https://twitter.com/ALPublicHealth/status/1251531524958289920) in reporting of lab test results that the state is working to correct. The number of deaths drops on April 23rd for an unknown reason.
+Totals for each county in Michigan include cases and deaths among federal and state prison inmates which are reported separately by the state Department of Health. Prison cases and deaths are included starting April 15.
+
+* New York
+
+All cases for the five boroughs of New York City (New York, Kings, Queens, Bronx and Richmond counties) are assigned to a single area called New York City. There is a large jump in the number of deaths on April 6th due to switching from data from New York City to data from New York state for deaths. The number of deaths in New York City also includes probable deaths reported by the New York City health department.
+
+For all New York state counties, starting on April 8th we are reporting deaths by place of fatality instead of residence of individual. There were no new deaths reported by the state on April 17th or April 18th.
+
+On June 30, the New York City health department announced an additional 692 deaths in New York City residents, most of which had taken place outside the city more than three weeks ago. We are counting these deaths when they are in excess of the number of deaths in New York City residents counted by the state.
 
 * Kansas City, Mo.
 
 Four counties (Cass, Clay, Jackson and Platte) overlap the municipality of Kansas City, Mo. The cases and deaths that we show for these four counties are only for the portions exclusive of Kansas City. Cases and deaths for Kansas City are reported as their own line.
+
+* Joplin, Mo.
+
+Starting June 25, cases and deaths for Joplin are reported separately from Jasper and Newton counties. The cases and deaths reported for those counties are only for the portions exclusive of Joplin. Joplin cases and deaths previously appeared in the counts for those counties or as Unknown.
 
 * Alameda County, Calif.
 
@@ -188,13 +215,13 @@ Counts for Guam include cases reported from the USS Theodore Roosevelt.
 
 * Puerto Rico
 
-On April 21, the territory's health department revised their number of cases downward, saying they had been double counting some coronavirus patients in official reports, leading to a higher number of cases reported than actually confirmed. 
+Data for Puerto Rico's county-equivalent municipios are available starting on May 5. This data was not available at the beginning of the outbreak and so all cases and deaths were assigned to Unknown.
 
-Additionally, from approximately April 12th through April 18th, the count of deaths for Puerto Rico include some probable Covid-19 related deaths that were not lab-confirmed. Starting April 19th these have been removed. We will revise the numbers for the 12th to 18th as possible.
+On April 21, the territory's health department revised their number of cases downward, saying they had been double counting some coronavirus patients in official reports, leading to a higher number of cases reported than actually confirmed. 
 
 * North Dakota
 
-On May 25, North Dakota annoucned that due to a laboratory equipment malfunction they were removing 82 positive results from their total case count, pending a retest of the samples.
+On May 25, North Dakota announced that due to a laboratory equipment malfunction they were removing 82 positive results from their total case count, pending a retest of the samples.
 
 * Connecticut
 
@@ -215,6 +242,12 @@ On June 19, Louisiana removed 1,666 duplicate and out of state cases from their 
 * Massachusetts
 
 On April 24, Massachusetts reported the results of a large number of backlogged tests performed by Quest Diagnostics dating back to April 13, leading to a large one day jump in the number of total cases.
+
+On June 30, the number of confirmed and probable deaths declined due to Massachusetts removing duplicate reports.
+
+* Mississippi
+
+From June 18 to 21, the Mississippi State Department of Health reported technical difficulties that prevented them from updating their case and death counts.
 
 * Texas
 
@@ -250,21 +283,31 @@ On June 1, Massachusetts started reporting probable cases and deaths in their da
 
 On June 1, we began recording probable cases and deaths reported by Michigan's county and regional health districts and adding them to the individual county and statewide totals. On June 5, the state also started to report probable cases and deaths statewide, leading to a jump in total cases and deaths.
 
+* New Jersey
+
+On June 25, New Jersey began reporting probable deaths, adding 1,854 probable deaths that may date back to earlier in the outbreak to their total.
+
 * Ohio
 
 The state reports lab-confirmed and probable cases and deaths separately at the state level but combine lab-confirmed and probable cases and deaths at the county level. Our statewide and county numbers combine both case types.
 
 * Pennsylvania
 
-The total cases number includes lab-confirmed and probable cases starting around April 16th, but the deaths number does not include probable deaths, except for on April 21st and April 22nd when it does.
+The total cases number includes lab-confirmed and probable cases starting around April 16th.
 
 * Virginia
 
 The state reports lab-confirmed and probable cases and deaths separately at the state level but combine lab-confirmed and probable cases and deaths at the county level. Our statewide and county numbers combine both case types.
 
+* Wisconsin
+
+Wisconsin started reporting probable cases and deaths on June 10, causing a large spike in the number of cases on that day. The total number of cases that day includes 2,407 newly reported probable cases.
+
 * Puerto Rico
 
-Our number of cases for Puerto Rico includes the results of serological cases in their total number of cases, we believe this more closely matches the definition of probable cases than confirmed cases as reported elsewhere. Our number of deaths is only deaths with a confirmed test.
+Puerto Rico reports confirmed and probable cases and deaths separately. Our statewide and municipality numbers combine both case types.
+
+Starting April 12, the count of deaths for Puerto Rico include some probable Covid-19 related deaths. From April 19 to April 22, these were then removed. Starting April 23, the numbers again include probable deaths. We will revise these numbers as possible.
 
 ## License and Attribution
 
@@ -292,4 +335,4 @@ covid-data@nytimes.com
 
 Mitch Smith, Karen Yourish, Sarah Almukhtar, Keith Collins, Danielle Ivory and Amy Harmon have been leading our U.S. data collection efforts.
 
-Data has also been compiled by Jordan Allen, Jeff Arnold, Aliza Aufrichtig, Mike Baker, Robin Berjon, Matthew Bloch, Nicholas Bogel-Burroughs, Maddie Burakoff, Christopher Calabrese, Andrew Chavez, Robert Chiarito, Carmen Cincotti, Alastair Coote, Matt Craig, John Eligon, Tiff Fehr, Andrew Fischer, Matt Furber, Rich Harris, Lauryn Higgins, Jake Holland, Will Houp, Jon Huang, Danya Issawi, Jacob LaGesse, Hugh Mandeville, Patricia Mazzei, Allison McCann, Jesse McKinley, Miles McKinley, Sarah Mervosh, Andrea Michelson, Blacki Migliozzi, Steven Moity, Richard A. Oppel Jr., Jugal K. Patel, Nina Pavlich, Azi Paybarah, Sean Plambeck, Carrie Price, Scott Reinhard, Thomas Rivas, James G. Robinson, Michael Robles, Alison Saldanha, Alex Schwartz, Libby Seline, Shelly Seroussi, Rachel Shorey, Anjali Singhvi, Charlie Smart, Ben Smithgall, Steven Speicher, Michael Strickland, Albert Sun, Thu Trinh, Tracey Tully, Maura Turcotte, Miles Watkins, Phil Wells, Jeremy White, Josh Williams, Jin Wu and Yanxing Yang.
+Data has also been compiled by Jordan Allen, Jeff Arnold, Aliza Aufrichtig, Mike Baker, Nikhil Baradwaj, Robin Berjon, Matthew Bloch, Nicholas Bogel-Burroughs, Maddie Burakoff, Christopher Calabrese, Andrew Chavez, Robert Chiarito, Carmen Cincotti, Alastair Coote, Matt Craig, John Eligon, Tiff Fehr, Andrew Fischer, Matt Furber, Ariana Giorgi, Rich Harris, Lauryn Higgins, Jake Holland, Will Houp, Jon Huang, Danya Issawi, Jacob LaGesse, Hugh Mandeville, Patricia Mazzei, Allison McCann, Jesse McKinley, Miles McKinley, Sarah Mervosh, Andrea Michelson, Blacki Migliozzi, Steven Moity, Richard A. Oppel Jr., Jugal K. Patel, Nina Pavlich, Azi Paybarah, Sean Plambeck, Carrie Price, Scott Reinhard, Thomas Rivas, James G. Robinson, Michael Robles, Alison Saldanha, Alex Schwartz, Libby Seline, Shelly Seroussi, Rachel Shorey, Anjali Singhvi, Charlie Smart, Ben Smithgall, Steven Speicher, Michael Strickland, Albert Sun, Thu Trinh, Tracey Tully, Maura Turcotte, Bella Virgilio, Miles Watkins, Phil Wells, Jeremy White, Josh Williams, Jin Wu and Yanxing Yang.
